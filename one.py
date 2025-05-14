@@ -6,8 +6,13 @@ app = Flask(__name__)
 
 print("north")
 
+with open("/data/one/first" , "a") as f:
+      f.write("hello world" + "\n")
+
+
+
 print(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////data/one/one.db'
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
@@ -30,6 +35,8 @@ def index():
             try:
                   db.session.add(new_task)
                   db.session.commit()
+                  with open("/data/one/" + task_content, "a") as f:
+                        f.write(task_content + "\n")
                   return redirect('/')
             except:
                  return 'There was an issue adding your task'

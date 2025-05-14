@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "80:8000"
+
+  db:
+    image: "mysql"
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+              
