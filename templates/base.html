@@ -1,5 +1,4 @@
-<!Doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,24 +6,44 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/bootstrap.min.js') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/jquery.min.js') }}">
-{% block head %}
-
-{% endblock %}
 
 
+</head>
+<body>
+    <div class="main">
+        {% block header %}
+        <header class="my-header">
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' }}">Home</a></li>
+                    <li><a href="{{ 'about.html' }}">About</a></li>
+                    <li><a href="{{ 'disclaimer' }}">Disclaimer</a></li>
+                    <li><a href="{{ 'contact' }}">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% endblock %}
 
+        <div class = "my-content">
+        {% block content %}
+        
+        {% endblock %}
+        </div> <!-- my-content -->
 
-    </head>
+        
 
-    <body>
-        {% block body %}
+        {% block footer %}
+        <div class="my-footer">
+            <p>Copyright Citco 2025</p>
+        </div>
 
         {% endblock %}
-        
-    </body>
+    </div> <!-- main -->
 
-    </html>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js')}}" ></script>
+
+</body>
+</html>

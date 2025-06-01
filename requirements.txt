@@ -1,3 +1,8 @@
+mysql-connector
+mysql-connector-python
 flask
 flask_sqlalchemy
+Flask-MySQLdb
 requests
+pandas
+numpy

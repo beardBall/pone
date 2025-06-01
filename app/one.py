@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+# from flask_mysqldb import MySQL
+
 
 app = Flask(__name__)
 
@@ -10,10 +12,24 @@ with open("/data/one/first" , "a") as f:
       f.write("hello world" + "\n")
 
 
-
+# 'sqlite:////data/one/one.db'
 print(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////data/one/one.db'
+# db['mysql_user'] = 'usera'
+# db['mysql_password'] = 'passworda'
+# db['mysql_host'] = 'localhost'
+# db['mysql_db'] = 'mydba'
+
+# app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://usera:passworda@127.0.0.1:3306'
+# connection_str='mysql://'+db['mysql_user']+':'+db['mysql_password']+'@'+db['mysql_host']+'/'+db['mysql_db']
+connection_str='mysql://usera:passworda@localhost/mydba'
+
+app.config['SQLALCHEMY_DATABASE_URI']=connection_str
+print(connection_str)
+
+
 db = SQLAlchemy(app)
+# db = MySQL(app)
+
 
 class Todo(db.Model):
      id = db.Column(db.Integer, primary_key=True)
