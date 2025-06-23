@@ -61,9 +61,11 @@ p {
         /* transition-delay: 100ms; */
         filter: blur(1px);
         transition: 10.5s ease-in-out;
-        
-        
-    };
+
+
+    }
+
+    ;
 
     &::selection {
         background-color: #ffff00;
@@ -71,8 +73,8 @@ p {
         font-weight: bold;
     }
 
-    
-    
+
+
 }
 
 p.two {
@@ -97,7 +99,7 @@ p.two {
 
 }
 
-nav {
+/* nav {
 
     & ul {
         list-style-type: none;
@@ -111,32 +113,33 @@ nav {
         float: left;
         display: inline;
         /* width: 80px; */
-        padding: 8px;
-        ;
+padding: 8px;
+;
 
-        & a {
-            transition: 0.75s;
-            padding: 8px;
-            letter-spacing: 2px;
-            border-radius: 35px;
-            margin-left: 5%;
-            ;
+& a {
+    transition: 0.75s;
+    padding: 8px;
+    letter-spacing: 2px;
+    border-radius: 35px;
+    margin-left: 5%;
+    ;
 
-            &:hover {
-                background-color: grey;
-                color: white;
-                border-radius: 4px;
-                width: 12px;
-                margin-left: 10%;
-                margin-right: 20%;
-            }
-        }
+    &:hover {
+        background-color: grey;
+        color: white;
+        border-radius: 4px;
+        width: 12px;
+        margin-left: 10%;
+        margin-right: 20%;
     }
+}
+}
 
 
 
 }
 
+*/
 /* nav */
 
 
@@ -145,4 +148,108 @@ div #results {
     padding: 10px;
     background-color: var(--green);
     border-radius: 10px;
+}
+
+
+
+
+.w3-spin {
+    animation: w3-spin 5s infinite quantum;
+}
+
+@keyframes w3-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    20% {
+        transform: rotate(20deg)
+    }
+
+    30% {
+        transform: rotate(50deg)
+    }
+
+    40% {
+        transform: rotate(40deg)
+    }
+
+    50% {
+        transform: rotate(80deg)
+    }
+
+    60% {
+        transform: rotate(120deg)
+    }
+
+    70% {
+        transform: rotate(220deg)
+    }
+
+    90% {
+        transform: rotate(320deg)
+    }
+
+
+
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+
+.w3-container:hover {
+    /* border-radius: 10px; */
+    transform: scale(0.97);
+    transition-duration: 2s;
+}
+
+.w3-container {
+    transition-duration: 2s;
+}
+
+
+
+
+
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    color: var(--navigationfg);
+    margin-bottom: 5rem;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+
+
+.stripes {
+  background-color: #ffd600;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 9px,
+    #f4ff81 9px,
+    #f4ff81 10px
+  );
+}
+
+
+.circles {
+  background-image: radial-gradient(
+    circle at top left,
+    #ec407a,
+     #44fff5 20%,
+ #ffa5f5 40%,
+    #42a5f5 60%,
+    #26a600 60%,
+    #26a6ff 80%,
+    #9ccc65 80%,
+    #9ddc65 90%,
+     #ffffff 100%
+  );
+  opacity: 1.00;
 }

@@ -6,7 +6,7 @@
 uat = {
     'hosting': {
         'host': '0.0.0.0',
-        'port': 8100,
+        'port': 80,
         'debug': True
     },
     'database': {

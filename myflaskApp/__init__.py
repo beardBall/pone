@@ -4,6 +4,10 @@ from flask import request
 from flask import redirect
 from flask import url_for
 
+# from login import *
+from myflaskApp.abc import *
+from myflaskApp.login import *
+
 
 
 app = Flask(__name__)
@@ -19,6 +23,9 @@ def index():
 def add():
     pass 
 
+@app.route('/login', methods=['GET', 'POST'])
+def loginnn():
+    return login(request)
 
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete():
